@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$_SESSION['login_user'] = 3;
+# $_SESSION['login_user'] = 3;
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -15,15 +15,15 @@ if (empty($_SESSION['playing'])) {
 if (isset($_POST['answer']) && is_numeric($_POST['answer'])) {
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
-		unset($wronganswer);
+		unset($error);
 	} else {
 		$total = $_SESSION['total'];
-		$wronganswer = "INCORRECT! " . $_SESSION['equation'] . " = " . $total;
+		$error = "INCORRECT! " . $_SESSION['equation'] . " = " . $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
 if (isset($_POST['answer']) && !is_numeric($_POST['answer'])) {
-	$wronganswer = "Enter a number";
+	$error = "Enter a number.";
 }
 // prepares the next math problem
 $number1 = rand(0,20);
@@ -56,6 +56,6 @@ if ($addsub == 0) {
 			<input type="submit" value="Submit" />
 		</form>
 	<p><?php echo $_SESSION['correct'] . "/" . $_SESSION['answered'] ?></p>
-	<p> <?php echo $wronganswer; ?></p>
+	<p class="alert"> <?php echo $error; ?></p>
 	</body>
 </html>

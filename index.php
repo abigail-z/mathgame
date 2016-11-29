@@ -8,9 +8,9 @@ if (empty($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;
-	echo "hi";
 }
-	
+
+echo $_POST['answer'];
 if ($_POST['answer'] == $_SESSION['total']) {
 	$_SESSION['correct'] = $_SESSION['correct'] + 1;
 	echo "help";

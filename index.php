@@ -39,6 +39,14 @@ if ($addsub == 0) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>Math Game</title>
+		<style>
+			.alert {
+				color:red;
+			}
+		</style>
+	</head>
 	<body>
 	<a href="http://a00999093.azurewebsites.net/logout.php">Logout</a>
 	<h1>Math Game</h1>

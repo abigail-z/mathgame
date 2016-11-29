@@ -12,6 +12,9 @@ if (isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
 	<body>
+		<head>
+			<title>Math Game</title>
+		</head>
 		<h1>Log in</h1>
 		<form action="http://a00999093.azurewebsites.net/authentication.php" method="post">
 			<input type="text" name="email" size="20" placeholder="email" />

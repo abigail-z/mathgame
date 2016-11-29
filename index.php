@@ -55,7 +55,7 @@ if ($addsub == 0) {
 			<input type="text" name="answer" placeholder="Enter answer" />
 			<input type="submit" value="Submit" />
 		</form>
-	<p><?php echo $_SESSION['correct'] . "/" . $_SESSION['answered'] ?></p>
+	<p>Score: <?php echo $_SESSION['correct'] . "/" . $_SESSION['answered'] ?></p>
 	<p class="alert"> <?php echo $error; ?></p>
 	</body>
 </html>

@@ -24,12 +24,19 @@ if (isset($answer)) {
 
 $number1 = rand(0,20);
 $number2 = rand(0,20);
-$_SESSION['total'] = $number1 + $number2;
+$addsub = rand(0,1);
+if ($addsub == 0) {
+	$_SESSION['total'] = $number1 + $number2;
+	$equation = $number1 . " + " . $number2;
+} else {
+	$_SESSION['total'] = $number1 - $number2;
+	$equation = $number1 . " - " . $number2;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-	<p><?php echo $number1 . " + " . $number2 ?></p>
+	<p><?php echo $equation; ?></p>
 		<form action="http://a00999093.azurewebsites.net/index.php" method="post">
 			<input type="text" name="answer" placeholder="Enter answer" />
 			<input type="submit" value="Submit" />

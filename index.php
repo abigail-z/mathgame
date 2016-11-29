@@ -8,14 +8,12 @@ if(!isset($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;
-	$fart = 1 + fart;
-	echo $fart;
 }
 	
 if(isset($_POST['answer'])) {
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
-		$_SESSION['text'] = "yes";
+		echo "help";
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
@@ -34,6 +32,5 @@ $_SESSION['total'] = $number1 + $number2;
 			<input type="submit" value="Submit" />
 		</form>
 	<p><?php echo $_SESSION['correct'] . "/" . $_SESSION['answered'] ?></p>
-	<?php echo $_SESSION['text']; ?>
 	</body>
 </html>

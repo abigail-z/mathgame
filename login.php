@@ -23,7 +23,6 @@ if (isset($_SESSION['user'])) {
 			<input type="password" name="password" size="20" placeholder="password" />
 			<br/>
 			<input type="submit" value="Log in" />
-			<!-- this error will never be visible if the user entered the correct info -->
 			<p class="alert"><?php echo $_SESSION['loginerror']; ?></p>
 		</form>
 	</body>

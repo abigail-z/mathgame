@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
 	die();
 }
 // sets the correct and answered values to 0 initially
-if (empty($_SESSION['playing'])) {
+if (!isset($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;

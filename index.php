@@ -1,27 +1,28 @@
 <?php
 session_start();
+// redirects to login if there is no session
 if (!isset($_SESSION['user'])) {
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();
 }
+// sets the correct and answered values to 0 initially
 if (empty($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;
 }
-
-$answer = $_POST['answer'];
-if (isset($answer)) {
-	if ($answer == $_SESSION['total']) {
+// checks if the answer is correct and changes the score and error message
+if (isset($_POST['answer'])) {
+	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 		unset($wronganswer);
 	} else {
 		$total = $_SESSION['total'];
-		$wronganswer = "INCORRECT! The correct answer was " . $total;
+		$wronganswer = "INCORRECT! " $number1 . " " . $number2 . " ". $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
-
+// prepares the next math problem
 $number1 = rand(0,20);
 $number2 = rand(0,20);
 $addsub = rand(0,1);

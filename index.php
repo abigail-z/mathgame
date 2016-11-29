@@ -4,7 +4,12 @@ if (!isset($_SESSION['user'])) {
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();
 }
-
+if(isset($_SESSION['playing'])) {
+	$_SESSION['correct'] = 0;
+	$_SESSION['answered'] = 0;
+	$_SESSION['playing'] = true;
+}
+	
 if(isset($_POST['answer'])) {
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] += 1;

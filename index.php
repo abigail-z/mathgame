@@ -22,7 +22,7 @@ if (isset($_POST['answer']) && is_numeric($_POST['answer'])) {
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
-if (!is_numeric($_POST['answer'])) {
+if (isset($_POST['answer']) && !is_numeric($_POST['answer'])) {
 	$wronganswer = "Enter a number";
 }
 // prepares the next math problem

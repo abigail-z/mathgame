@@ -20,6 +20,7 @@ if (isset($_SESSION['user'])) {
 			<br/>
 			<input type="submit" value="Log in" />
 			<br/>
+			<!-- this error will never be visible if the user entered the correct info -->
 			<?php echo $_SESSION['loginerror']; ?>
 		</form>
 	</body>

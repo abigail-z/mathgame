@@ -29,7 +29,7 @@ $number2 = rand(0,20);
 $addsub = rand(0,1);
 if ($addsub == 0) {
 	$_SESSION['total'] = $number1 + $number2;
-	$equation = $number1 . " + " . $number2;
+	$_SESSION['equation'] = $number1 . " + " . $number2;
 } else {
 	$_SESSION['total'] = $number1 - $number2;
 	$_SESSION['equation'] = $number1 . " - " . $number2;

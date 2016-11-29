@@ -18,7 +18,7 @@ if (isset($_POST['answer'])) {
 		unset($wronganswer);
 	} else {
 		$total = $_SESSION['total'];
-		$wronganswer = "INCORRECT! " $number1 . " " . $number2 . " ". $total;
+		$wronganswer = "INCORRECT! " . $number1 . " " . $number2 . " ". $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }

@@ -8,6 +8,7 @@ if(!isset($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;
+	echo 10++;
 }
 	
 if(isset($_POST['answer'])) {
@@ -15,7 +16,7 @@ if(isset($_POST['answer'])) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 		$_SESSION['text'] = "yes";
 	}
-	$_SESSION['answered'] = $_SESSION['correct'] + 1;
+	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
 
 $number1 = rand(0,20);

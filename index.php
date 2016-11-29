@@ -12,9 +12,9 @@ if(!isset($_SESSION['playing'])) {
 	
 if(isset($_POST['answer'])) {
 	if ($_POST['answer'] == $_SESSION['total']) {
-		$_SESSION['correct'] += 1;
+		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 	}
-	$_SESSION['answered'] += 1;
+	$_SESSION['answered'] = $_SESSION['correct'] + 1;
 }
 
 $number1 = rand(0,20);

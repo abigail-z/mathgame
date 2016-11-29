@@ -19,7 +19,7 @@ if (isset($_POST['answer'])) {
 		unset($wronganswer);
 	} else {
 		$total = $_SESSION['total'];
-		$wronganswer = "INCORRECT! " . $lastequation . " = " . $total;
+		$wronganswer = "INCORRECT! " . $_SESSION['equation'] . " = " . $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
@@ -38,7 +38,7 @@ if ($addsub == 0) {
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-	<p><?php echo $equation; ?></p>
+	<p><?php echo $_SESSION['equation']; ?></p>
 		<form action="http://a00999093.azurewebsites.net/index.php" method="post">
 			<input type="text" name="answer" placeholder="Enter answer" />
 			<input type="submit" value="Submit" />

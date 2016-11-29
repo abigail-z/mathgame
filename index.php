@@ -8,6 +8,6 @@ if (!isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html lang="en">
 	<body>
-		<?php echo $_SESSION['login_user']; ?>
+		<p>Index!</p>
 	</body>
 </html>

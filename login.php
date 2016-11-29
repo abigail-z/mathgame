@@ -11,7 +11,7 @@ $_SESSION['password_user'] = "aaa";
 <html lang="en">
 	<body>
 		<form action="http://a00999093.azurewebsites.net/authentication.php" method="post">
-			<input type="email" name="email" size="6" placeholder="Enter email" />
+			<input type="text" name="email" size="6" placeholder="Enter email" />
 		</form>
 	</body>
 </html>

@@ -1,8 +1,10 @@
 <?php
 session_start();
+if (isset($_SESSION['user'])) {
+	header("Location: http://a00999093.azurewebsites.net/index.php");
+	die();
+}
 
-$_SESSION['login_user'] = "a@a.a";
-$_SESSION['password_user'] = "aaa";
 # todo:
 # create a form and ue it to post username and password
 # create a new page to authenticate info and redirect as needed
@@ -17,6 +19,8 @@ $_SESSION['password_user'] = "aaa";
 			<input type="password" name="password" size="20" placeholder="password" />
 			<br/>
 			<input type="submit" value="Log in" />
+			<br/>
+			<?php echo $_SESSION['loginerror']; ?>
 		</form>
 	</body>
 </html>

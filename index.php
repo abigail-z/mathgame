@@ -1,13 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['login_user'])) {
+if (!isset($_SESSION['user'])) {
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();
-}
-if ($_SESSION['login_user'] != "a@a.a" && $_SESSION['password_user'] != "aaa") {
-	header("Location: http://a00999093.azurewebsites.net/login.php");
-	die();
-	$_SESSION['login_error'] = "Invalid credentials";
 }
 ?>
 <!DOCTYPE html>

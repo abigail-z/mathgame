@@ -4,7 +4,7 @@ if (!isset($_SESSION['user'])) {
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();
 }
-if(isset($_SESSION['playing'])) {
+if(!isset($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;

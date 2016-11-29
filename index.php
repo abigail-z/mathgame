@@ -14,7 +14,10 @@ $answer = $_POST['answer'];
 if (isset($answer)) {
 	if ($answer == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
-		echo "help";
+		unset($wronganswer);
+	} else {
+		$total = $_SESSION['total'];
+		$wronganswer = "INCORRECT! The correct answer was " . $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
@@ -32,5 +35,6 @@ $_SESSION['total'] = $number1 + $number2;
 			<input type="submit" value="Submit" />
 		</form>
 	<p><?php echo $_SESSION['correct'] . "/" . $_SESSION['answered'] ?></p>
+	<p> <?php echo $wronganswer; ?></p>
 	</body>
 </html>

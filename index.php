@@ -16,6 +16,7 @@ if(isset($_POST['answer'])) {
 		echo "help";
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
+	echo "shelp";
 }
 
 $number1 = rand(0,20);

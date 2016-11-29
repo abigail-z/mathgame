@@ -16,5 +16,6 @@ if ($email = $_POST['email'] == "a@a.a" && $_POST['password'] == "aaa") {
 } else {
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();
+	unset($_SESSION['loginerror'];)
 }
 ?>

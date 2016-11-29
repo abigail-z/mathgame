@@ -12,7 +12,7 @@ if (empty($_SESSION['playing'])) {
 	$_SESSION['playing'] = true;
 }
 // checks if the answer is correct and changes the score and error message
-if (isset($_POST['answer'])) {
+if (isset($_POST['answer']) && is_numeric($_POST['answer'])) {
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 		unset($wronganswer);
@@ -21,6 +21,9 @@ if (isset($_POST['answer'])) {
 		$wronganswer = "INCORRECT! " . $_SESSION['equation'] . " = " . $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
+}
+if (!is_numeric($_POST['answer'])) {
+	$wronganswer = "Enter a number";
 }
 // prepares the next math problem
 $number1 = rand(0,20);

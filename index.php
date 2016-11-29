@@ -8,7 +8,8 @@ if(!isset($_SESSION['playing'])) {
 	$_SESSION['correct'] = 0;
 	$_SESSION['answered'] = 0;
 	$_SESSION['playing'] = true;
-	echo 10++;
+	$fart = 1 + fart;
+	echo $fart;
 }
 	
 if(isset($_POST['answer'])) {

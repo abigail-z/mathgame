@@ -9,7 +9,7 @@ if ($email = $_POST['email'] == "a@a.a" && $_POST['password'] == "aaa") {
 	$_SESSION['user'] = true;
 	header("Location: http://a00999093.azurewebsites.net/index.php");
 	die();
-} elseif (!empty($_POST['email']) && !empty($_POST['password'])){
+} elseif (isset($_POST['email']) && isset($_POST['password'])){
 	$_SESSION['loginerror'] = "Invalid login credentials.";
 	header("Location: http://a00999093.azurewebsites.net/login.php");
 	die();

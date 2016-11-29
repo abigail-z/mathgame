@@ -13,12 +13,13 @@ if (empty($_SESSION['playing'])) {
 }
 // checks if the answer is correct and changes the score and error message
 if (isset($_POST['answer'])) {
+	$lastequation = $equation;
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 		unset($wronganswer);
 	} else {
 		$total = $_SESSION['total'];
-		$wronganswer = "INCORRECT! " . $number1 . " " . $number2 . " ". $total;
+		$wronganswer = "INCORRECT! " . $lastequation . " = " . $total;
 	}
 	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }

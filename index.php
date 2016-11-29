@@ -25,7 +25,7 @@ $_SESSION['total'] = $number1 + $number2;
 <html lang="en">
 	<body>
 	<p><?php echo $number1 . " + " . $number2 ?></p>
-		<form action="http://a00999093.azurewebsites.net/authentication.php" method="post">
+		<form action="http://a00999093.azurewebsites.net/index.php" method="post">
 			<input type="text" name="answer" placeholder="Enter answer" />
 			<input type="submit" value="Submit" />
 		</form>

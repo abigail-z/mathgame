@@ -14,6 +14,11 @@ if (isset($_SESSION['user'])) {
 	<body>
 		<head>
 			<title>Math Game</title>
+			<style>
+			.alert {
+				color:red;
+			}
+			</style>
 		</head>
 		<h1>Log in</h1>
 		<form action="http://a00999093.azurewebsites.net/authentication.php" method="post">
@@ -22,9 +27,8 @@ if (isset($_SESSION['user'])) {
 			<input type="password" name="password" size="20" placeholder="password" />
 			<br/>
 			<input type="submit" value="Log in" />
-			<br/>
 			<!-- this error will never be visible if the user entered the correct info -->
-			<?php echo $_SESSION['loginerror']; ?>
+			<p class="alert"><?php echo $_SESSION['loginerror']; ?></p>
 		</form>
 	</body>
 </html>

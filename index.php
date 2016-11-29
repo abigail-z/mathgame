@@ -10,12 +10,14 @@ if (empty($_SESSION['playing'])) {
 	$_SESSION['playing'] = true;
 }
 
-echo $_POST['answer'];
-if ($_POST['answer'] == $_SESSION['total']) {
-	$_SESSION['correct'] = $_SESSION['correct'] + 1;
-	echo "help";
+$answer = $_POST['answer'];
+if (isset($answer)) {
+	if ($answer == $_SESSION['total']) {
+		$_SESSION['correct'] = $_SESSION['correct'] + 1;
+		echo "help";
+	}
+	$_SESSION['answered'] = $_SESSION['answered'] + 1;
 }
-$_SESSION['answered'] = $_SESSION['answered'] + 1;
 
 $number1 = rand(0,20);
 $number2 = rand(0,20);

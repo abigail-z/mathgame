@@ -13,7 +13,6 @@ if (empty($_SESSION['playing'])) {
 }
 // checks if the answer is correct and changes the score and error message
 if (isset($_POST['answer'])) {
-	$lastequation = $_SESSION['equation'];
 	if ($_POST['answer'] == $_SESSION['total']) {
 		$_SESSION['correct'] = $_SESSION['correct'] + 1;
 		unset($wronganswer);
@@ -38,6 +37,8 @@ if ($addsub == 0) {
 <!DOCTYPE html>
 <html lang="en">
 	<body>
+	<a href="http://a00999093.azurewebsites.net/logout.php">Logout</a>
+	<h1>Math Game</h1>
 	<p><?php echo $_SESSION['equation']; ?></p>
 		<form action="http://a00999093.azurewebsites.net/index.php" method="post">
 			<input type="text" name="answer" placeholder="Enter answer" />
